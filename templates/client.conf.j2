@@ -1,0 +1,40 @@
+# {{ ansible_managed }}
+
+client
+remote-cert-tls server
+auth-nocache
+reneg-sec 259200
+
+{% if openvpn_comp_lzo %}
+comp-lzo
+{% endif %}
+dev {{ openvpn_dev }}
+{% if openvpn_nobind %}
+nobind
+{% endif %}
+remote {{ openvpn_remote_host }} {{ openvpn_remote_port }} {{ openvpn_remote_proto }}
+
+{% if openvpn_ca_certificate %}
+<ca>
+{{ openvpn_ca_certificate }}
+</ca>
+{% endif %}
+{% if openvpn_client_certificate %}
+<cert>
+{{ openvpn_client_certificate }}
+</cert>
+{% endif %}
+{% if openvpn_client_key %}
+<key>
+{{ openvpn_client_key }}
+</key>
+{% endif %}
+{% if openvpn_tls_auth_key %}
+
+key-direction 1
+
+<tls-auth>
+{{ openvpn_tls_auth_key }}
+</tls-auth>
+{% endif %}
+

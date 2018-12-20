@@ -1,0 +1,7 @@
+---
+# vars file for openvpn (Ubuntu)
+
+openvpn_packages: openvpn
+openvpn_service_name: openvpn@client
+openvpn_user: nobody
+openvpn_group: nogroup
