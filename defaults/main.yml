@@ -1,0 +1,12 @@
+---
+# default values for vars
+
+openvpn_proto:	udp
+openvpn_remote_host:	''
+openvpn_remote_port:	1194
+openvpn_remote_proto: "{{ openvpn_proto }}"
+
+openvpn_ca_certificate:	''
+openvpn_client_certificate: ''
+openvpn_client_key: ''
+
